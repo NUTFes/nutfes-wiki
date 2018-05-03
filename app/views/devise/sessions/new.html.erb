@@ -1,0 +1,31 @@
+<nav class="navbar navbar-dark bg-info">
+<span class="navbar-brand md-0 h1">&ensp;ログイン</span></nav>
+
+&ensp;&ensp;<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+&ensp;&ensp;<%= f.label "メールアドレス" %><br />
+&ensp;&ensp;<%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+<br>
+  <div class="field">
+&ensp;&ensp;<%= f.label "パスワード" %><br />
+&ensp;&ensp;<%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+<!--
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+&ensp;&ensp;<%= f.check_box :remember_me %>
+&ensp;&ensp;<%= f.label :remember_me %>
+    </div>
+  <% end -%>
+-->
+<br>
+<br>
+  <div class="actions">
+&ensp;&ensp;<input class="btn btn-info" type="submit" value="ログイン" >
+  </input>
+  </div>
+<% end %>
+<!--
+&ensp;&ensp;<%= render "devise/shared/links" %>-->

@@ -1,0 +1,50 @@
+<h1><%= @task.title %></h1>
+
+<table class = "attr">
+<tr>
+  <th  text-align: left witdth = "150">問題の詳細</th>
+</tr>
+<tr>
+  <td><%= @task.detail %></td>
+</tr>
+</table>
+<br>
+<br>
+
+<table class = "attr">
+<tr>
+  <th>解決策および改善案</th>
+</tr>
+<tr>
+  <td><%= @task.solution %></td>
+</tr>
+</table>
+<br>
+<br>
+
+<table class = "attr">
+<tr>
+  <th>コメント</th>
+</tr>
+<tr>
+  <td><%= @task.comment %></td>
+</tr>
+</table>
+<br>
+<br>
+
+<table class = "attr">
+<tr>
+  <th>投稿者</th>
+</tr>
+<tr>
+  <td><%= @task.name %></td>
+</tr>
+</table>
+
+<p><%= link_to "["@event.title"の問題点の一覧に戻る]", event_tasks_path(params[:event_id]) %></p>
+
+
+<p><%= link_to "[削除]", task_path(@task.id, event_id: params[:event_id]), method: :delete, data: { confirm: "本当に削除しますか？"} %></p>
+<p><%= link_to "[編集]", [:edit, @task, event_id: params[:event_id]] %></p>
+</body>

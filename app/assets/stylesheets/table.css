@@ -1,0 +1,30 @@
+
+table.list, table.attr{
+  font-size: 90%;
+  width: 90%;
+  padding: 4px;
+}
+
+table.list th, table.attr th {
+  background-color: #f93;
+  color: white;
+  font-weight: bold;
+}
+
+table.list td, table.list th,
+table.list td, table.attr th {
+  padding: 4px;
+}
+
+table.list th {
+  text-align: left;
+}
+
+table.attr th {
+  text-align: left; 
+}
+
+table.list td, table.attr td {
+  background-color: #fc9;
+}
+

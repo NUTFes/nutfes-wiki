@@ -1,0 +1,24 @@
+<nav class="navbar navbar-dark bg-info">
+<span class="navbar-brand mb-0 h1">&ensp;名前を変更する</span>
+</nav>
+
+&ensp;&ensp;<%= form_for @event do |form| %>
+
+<% form.label :title %>
+&ensp;&ensp;変更後の行事名を入力してください<br><br>
+&ensp;&ensp;<%= form.text_field :title, size: 30 %>
+  <% if @event.errors.any? %>
+  <%= @event.errors.messages[:title][0] %>
+  <% end %>
+
+<br>
+<br>
+
+<p>
+&ensp;&ensp;<input class="btn btn-warning" type="submit" value="変更する" > 
+</input>
+</p>
+&ensp;&ensp;<button type="button" class="btn btn-primary btn-sm">
+<%= link_to "行事の一覧に戻る","/",:style=>"color:white" %>
+<% end %>
+</button>

@@ -1,0 +1,27 @@
+<table class = "attr">
+    <tr>  
+      <th><%= form.label :title, "タイトル" %></th>
+      <td><%= form.text_field :title, size: 20 %></td>
+    </tr>
+
+    <tr>
+      <th><%= form.label :detail, "問題の詳細" %></th>
+      <td><%= form.text_field :detail, size: 200 %></td>
+    </tr>
+
+    <tr>
+      <th><%= form.label :solution, "解決策および解決案" %></th>
+      <td><%= form.text_field :solution, size: 200 %></td>
+    </tr>
+
+    <tr>
+      <th><%= form.label :comment, "コメント" %></th>
+      <td><%= form.text_field :comment, size: 200 %></td>
+    </tr>
+
+    <tr>
+      <th><%= form.label :name, "投稿者" %></th>
+      <td><%= form.text_field :name, size: 20 %></td>
+    </tr>
+    <%= form.hidden_field :event_id, value: params[:event_id] %>
+  </table>

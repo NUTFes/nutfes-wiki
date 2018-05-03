@@ -1,0 +1,72 @@
+<table class = "attr" align="center">
+    <tr>  
+      <th><%= form.label :title, "タイトル" %></th>
+    </tr>
+    <tr>
+      <td><%= form.text_field :title, maxlength: 145 %></td>
+    </tr>
+</table>
+<br>
+<br>
+
+<table class = "attr" align="center">
+    <tr>
+      <th><%= form.label :detail, "問題の詳細" %></th>
+    </tr>
+    <tr>
+      <td><%= form.text_area :detail, maxlength:1500, cols: "145", rows: 10 %></td>
+    </tr>
+</table>
+<br>
+<br>
+
+<table class = "attr" align="center">
+    <tr>
+      <th><%= form.label :solution, "解決策および解決案" %></th>
+    </tr>
+    <tr>
+      <td><%= form.text_area :solution, maxlength:1500, cols: 145, rows:10  %></td>
+    </tr>
+</table>
+<br>
+<br>
+
+<table class = "attr" align="center">
+    <tr>
+      <th><%= form.label :comment, "コメント" %></th>
+    </tr>
+    <tr>
+      <td><%= form.text_area :comment, maxlength:1500,cols: 145 ,rows:10 %></td>
+    </tr>
+</table>
+<br>
+<br>
+
+<table class = "attr" align="center">
+    <tr>
+      <th><%= form.label :name, "投稿者" %></th>
+    </tr>
+    <tr>
+      <td><%= form.text_field :name, maxlength: 30 %></td>
+    </tr>
+    <%= form.hidden_field :event_id, value: params[:event_id] %>
+  </table>
+
+<br>
+<br>
+<!--
+<table class = "attr" align="center">
+    <tr>
+      <th><%= form.label :date, "日付" %></th>
+    </tr>
+    <tr>
+      <td><%= form.date_field "date" %></td>
+    </tr>
+    <%= form.hidden_field :event_id, value: params[:event_id] %>
+  </table>
+-->
+
+
+
+
+

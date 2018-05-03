@@ -1,0 +1,47 @@
+<html>
+<nav class="navbar navbar-dark bg-info">
+    <span class="navbar-brand mb-0 h1">&ensp;行事一覧</span>
+ <span class="notice" align="right"><%= notice %></span>
+ <span class="alert" align="right"><%= alert %></span>
+</nav>
+<br>
+<br>
+  <div class="col-sm-6">
+   <div class="card"> 
+ <% @events.each do |event| %>
+     <h5 class="card-header bg-light"> 
+      <%= link_to event.title , event_tasks_path(event.id),:style=>"color:black" %><br>
+      <div align="right">
+       <button type="button" class="btn btn-warning btn-sm">
+         <%= link_to "名前を変更する",
+          edit_event_path(event.id),
+          :style=>"color:white;" %>
+       </button>
+       <button type="button" class="btn btn-danger btn-sm">   
+         <%= link_to "削除", event_path(event.id), 
+          method: :delete, data: { confirm: "本当に削除しますか？"},
+          :style=>"color:white;" %>
+       </button>
+       </div>
+         <% end %>
+         </h5>
+     </div>    
+  </div>     
+<br>
+<br>
+&ensp;&ensp;<button type="button" class="btn btn-success btn-sm">
+   <%= link_to "追加" ,new_event_path ,:style=>"color:white;" %>
+  </button>
+</html>
+<br>
+<br>
+<br>
+<br>
+
+&ensp;&ensp;<button type="button" class="btn btn-secondary btn-sm">
+<%= link_to "ログアウト", 
+destroy_user_session_path, 
+method: :delete, :class => 'navbar-link', 
+:style=>"color:white;"
+%>
+</button>

@@ -1,0 +1,66 @@
+<nav class="navbar navbar-dark bg-info">
+<span class="navbar-brand mb-0 h1">&ensp;&ensp;&ensp;&ensp;<%= @task.title %></span>
+</nav>
+<br>
+
+<table class="attr" align="center">
+<tr>
+  <th  text-align: left witdth = "150">問題の詳細</th>
+</tr>
+<tr>
+  <td><%= simple_format(@task.detail) %></td>
+</tr>
+</table>
+<br>
+
+<table class="attr" align="center">
+<tr>
+  <th>解決策および改善案</th>
+</tr>
+<tr>
+  <td><%= simple_format(@task.solution) %></td>
+</tr>
+</table>
+<br>
+
+<table class="attr" align="center">
+<tr>
+  <th>コメント</th>
+</tr>
+<tr>
+  <td><%= simple_format(@task.comment) %></td>
+</tr>
+</table>
+<br>
+
+<table class="attr" align="center">
+<tr>
+  <th>投稿者</th>
+</tr>
+<tr>
+  <td><%= @task.name %></td>
+</tr>
+</table>
+<br>
+
+  <div align="right">初投稿日&emsp;&emsp;&emsp;&emsp;<br>
+  <%= @task.created_at.strftime("%Y-%m-%d") %>&emsp;&emsp;&emsp;&emsp;<br></div>
+  <div align="right">更新日&emsp;&emsp;&emsp;&emsp;<br>
+  <%= @task.updated_at.strftime("%Y-%m-%d") %>&emsp;&emsp;&emsp;&emsp;<br></div>
+
+&emsp;&emsp;&emsp;&emsp;<button type="button" class="btn btn-info btn-sm">
+<%= link_to "編集", [:edit, @task, event_id: params[:event_id]] ,:style=>"color:white;" %>
+</button>
+&emsp;&emsp;&emsp;<button type="button" class="btn btn-danger btn-sm">
+   <%= link_to "削除", task_path(@task.id, event_id: params[:event_id]), method: :delete, data: { confirm: "本当に削除しますか？"} ,:style=>"color:white;"%>
+</button>
+<br>
+<br>
+&emsp;&emsp;&emsp;&emsp;<button type="button" class="btn btn-primary btn-sm">
+<%= link_to "問題点の一覧に戻る", event_tasks_path(params[:event_id]),:style=>"color:white" %>
+</button><br><br>
+&emsp;&emsp;&emsp;&emsp;<button type="button" class="btn btn-primary btn-sm">
+<%= link_to "行事の一覧に戻る","/",:style=>"color:white" %>
+</button>
+<br>
+<br>

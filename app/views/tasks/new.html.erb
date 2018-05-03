@@ -1,0 +1,41 @@
+<nav class="navbar navbar-dark bg-info">
+<span class="navbar-brand mb-0 h1">&ensp;&ensp;&ensp;問題点を追加する</span>
+</nav>
+<%= form_for @task do |form| %>
+<% if @task.errors.any? %>
+<br>
+<div class="col-sm-6">
+ <div class="card">
+  <h5 class="card-header bg-light" style="background-color:#FF0000;">
+  <font color="#FFFFFF" style="background-color:#FF0000;">
+ <%= @task.errors.count %>件のエラーがあります<br></font>
+  <% if @task.errors.messages[:title] %>
+    <%= @task.errors.messages[:title][0] %>
+  <% end %><br>
+  <% if @task.errors.messages[:detail] %>
+    <%= @task.errors.messages[:detail][0] %>
+  <% end %><br>
+  <% if @task.errors.messages[:solution] %>
+    <%= @task.errors.messages[:solution][0] %>
+  <% end %><br>
+  <% if @task.errors.messages[:name] %>
+    <%= @task.errors.messages[:name][0] %> 
+  <% end %><br>
+<% end %>
+</div></div></h5>
+<br><br>
+<%= render "form", form: form %>
+<br>
+<p>
+&emsp;&emsp;&emsp;&emsp;<input class="btn btn-success" type="submit" value="追加する" >
+</input>
+</p>
+
+
+&emsp;&emsp;&emsp;&emsp;<button type="button" class="btn btn-primary btn-sm">
+<%= link_to "戻る", :back ,:style=>"color:white;" %>
+</button>
+<% end %>
+<br>
+<br>
+<br>

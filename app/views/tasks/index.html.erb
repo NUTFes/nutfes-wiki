@@ -1,0 +1,27 @@
+<nav class="navbar navbar-dark bg-info">
+<span class="navbar-brand mb-0 h1">&ensp;<%= @event.title %>の問題点一覧</span>
+</nav>
+<br>
+  <% @tasks.each do |task| %>
+&ensp;&ensp;
+<span class="alert alert-light">
+<b> <%= link_to task.title, task_path(task.id, event_id: @event.id),:style=>"color:black;"%></b></span><br><br>
+  <% end %>
+  
+ 
+  <!-- <li>
+  <%= form_for [@event, @event.tasks.build] do |form| %>
+  <%= form.text_field :title %>
+  <%= form.submit %>
+  <% end %>
+  </li> -->
+  
+  <br>
+
+&ensp;&ensp;<button type="button" class="btn btn-success btn-sm">
+            <%= link_to "追加", new_event_task_path(@event), :style=>"color:white;" %></button><br>
+<br>
+&ensp;&ensp;<button type="button" class="btn btn-primary btn-sm">
+<%= link_to "行事の一覧に戻る","/",:style=>"color:white" %>
+</button>
+

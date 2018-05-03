@@ -1,0 +1,24 @@
+<nav class="navbar navbar-dark bg-info">
+<span class="navbar-brand mb-0 h1">&ensp;&ensp;&ensp;問題点を編集する</span>
+</nav>
+<br>
+<br>
+
+<%= form_for @task do |form| %>
+<%= render "form", form: form %>
+<br>
+<p>
+&emsp;&emsp;&emsp;&emsp;<input class="btn btn-info" type="submit" value="変更する" >
+</input>
+</p>
+
+
+&emsp;&emsp;&emsp;&emsp;<button type="button" class="btn btn-primary btn-sm">
+<%= link_to "戻る", task_path(params[:id], event_id: params[:event_id]) ,:style=>"color:white;" %>
+</button>
+<% end %>
+<br>
+<br>
+<br>
+
+

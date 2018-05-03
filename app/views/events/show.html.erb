@@ -1,0 +1,7 @@
+<h1><%= @event.title %></h1>
+
+<u1>
+<% @event.tasks.each do |task| %>
+<li><%= task.title %>
+<% end %>
+</u1>
